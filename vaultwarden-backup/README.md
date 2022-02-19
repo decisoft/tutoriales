@@ -105,6 +105,8 @@ Para ello, desplegamos un nuevo `docker-compose.yml` en Portainer, que contenga 
 
 Una vez hecho, le damos a "Deploy the stack" o "Levantar stack" y ya estaría el contenedor funcionando. Si todo ha ido bien, accederemos a este nuevo Vaultwarden y nos logearemos en él como si fuese el original, mismo email y misma contraseña. 
 
+![Captura de pantalla de la restauración de Vaultwarden en Portainer](https://github.com/decisoft/tutoriales/blob/main/vaultwarden-backup/img/portainer-stack-03.png?raw=true)
+
 
 
 > Gracias por leer. Si tienes alguna duda, puedes abrir un issue en este repositorio o preguntarla en los grupos de Telegram de Synology NAS, NASeros, NASZeros o UnRAID ES y estaré encantado, al igual que el resto de la comunidad, en solventar tus dudas (primero asegúrate bien de haber leído y hecho todos los pasos, que nos conocemos 😄).

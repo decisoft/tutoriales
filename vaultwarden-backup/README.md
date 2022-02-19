@@ -11,6 +11,8 @@
 
 En esta primera parte, veremos cómo levantar los contenedores de Vaultwarden y de db-backup, para configurar la copia de seguridad: hora, frecuencia y limpieza. Vaultwarden, como otros contenedores con bases de datos, necesitan de una doble copia de seguridad: primero en local de la base de datos, y luego respaldarla con nuestro software de copias de seguridad a cualquier otra ubicación (un disco externo, una nube u otro NAS/Raspberry Pi). 
 
+Eso sí, siempre tendremos la versión manual, que sería exportar a un .json cifrado nuestra bóveda de contraseñas de forma habitual y guardarlo en algún directorio que respaldemos. Este tutorial es para hacerlo automatizado y no tener que estar pendiente de hacerlo manual.
+
 > Este tutorial se ampliará próximamente para añadir la información de los primeros pasos con Vaultwarden, sobre cómo crear nuestro usuario, importar contraseñas y asegurar el sitio con proxy inverso y SSL. Si lees esto y quieres colaborar redactando esa parte, puedes abrir una pull request y estaré encantado de añadirla. 
 
 ### Poner en marcha ambos contenedores con docker-compose

@@ -11,9 +11,11 @@
 
 En esta primera parte, veremos cómo levantar los contenedores de Vaultwarden y de db-backup, para configurar la copia de seguridad: hora, frecuencia y limpieza. Vaultwarden, como otros contenedores con bases de datos, necesitan de una doble copia de seguridad: primero en local de la base de datos, y luego respaldarla con nuestro software de copias de seguridad a cualquier otra ubicación (un disco externo, una nube u otro NAS/Raspberry Pi). 
 
+> Este tutorial se ampliará próximamente para añadir la información de los primeros pasos con Vaultwarden, sobre cómo crear nuestro usuario, importar contraseñas y asegurar el sitio con proxy inverso y SSL. Si lees esto y quieres colaborar redactando esa parte, puedes abrir una pull request y estaré encantado de añadirla. 
+
 ### Poner en marcha ambos contenedores con docker-compose
 
-Para hacerlo, nos vamos a ayudar del [docker-compose.yml](https://github.com/decisoft/tutoriales/blob/main/vaultwarden-backup/docker-compose.yml) de ejemplo que está en el repositorio. Si ya tienes uno con tu contenedor de vaultwarden, simplemente añade la parte de db-backup, no hace falta que modifiques la anterior. El contenido del `docker-compose.yml` lo podemos pegar en un nuevo stack de Portainer, y configuraremos los dos servicios: vaultwarden y db-backup. *(Si tienes los conocimientos, también puedes descargar el `docker-compose.yml` mediante el acceso SSH a tu NAS/Raspberry Pi y editarlo con `nano`).*
+Para hacerlo, nos vamos a ayudar del [docker-compose.yml](https://github.com/decisoft/tutoriales/blob/main/vaultwarden-backup/docker-compose.yml) de ejemplo que está en el repositorio. Si ya tienes uno con tu contenedor de vaultwarden, simplemente añade la parte de [db-backup](#db-backup), no hace falta que modifiques la anterior. El contenido del `docker-compose.yml` lo podemos pegar en un nuevo stack de Portainer, y configuraremos los dos servicios: vaultwarden y db-backup. *(Si tienes los conocimientos, también puedes descargar el `docker-compose.yml` mediante el acceso SSH a tu NAS/Raspberry Pi y editarlo con `nano`).*
 
 #### Vaultwarden
 

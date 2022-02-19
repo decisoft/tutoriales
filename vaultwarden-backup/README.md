@@ -1,8 +1,13 @@
 # Copia de seguridad automatizada de Vaultwarden
 
-> *Nota: este tutorial ha sido realizado en una Raspberry Pi 4, pero puede ser llevado a cabo sobre cualquier sistema con Docker instalado (imprescindible) y Portainer, aunque también se puede hacer mediante SSH.* 
+> *Nota: este tutorial ha sido realizado en una Raspberry Pi 4, pero puede ser llevado a cabo sobre cualquier sistema con Docker y docker-compose instalado (imprescindible) y Portainer, aunque también se puede hacer mediante SSH.* 
 
-## Configurar la copia de seguridad
+## **Índice**
+
+1. [Crear los contenedores y configurarlos](#crear-los-contenedores-y-configurarlos).
+2. [Restaurar la copia de seguridad](#restaurar-la-copia-de-seguridad-de-vaultwarden).
+
+## Crear los contenedores y configurarlos
 
 En esta primera parte, veremos cómo levantar los contenedores de Vaultwarden y de db-backup, para configurar la copia de seguridad: hora, frecuencia y limpieza. Vaultwarden, como otros contenedores con bases de datos, necesitan de una doble copia de seguridad: primero en local de la base de datos, y luego respaldarla con nuestro software de copias de seguridad a cualquier otra ubicación (un disco externo, una nube u otro NAS/Raspberry Pi). 
 
@@ -56,7 +61,9 @@ En mi caso, ahora que se están haciendo las copias de seguridad del gestor de c
 
 Como mencionamos al principio, es importante esto, porque aunque tengamos varias copias de nuestra base de datos en local, si les pasa algo a los discos, sufrimos un ransomware o se corrompen los archivos, tenemos que tener siempre una copia fuera que podamos recuperar.
 
-### Restaurar la copia de seguridad de Vaultwarden
+
+
+## Restaurar la copia de seguridad de Vaultwarden
 
 Sí, todos nuestros peores presagios se han cumplido: un disco duro se ha estropeado, se ha corrompido la información, un ransomware ha cifrado y nos ha dejado sin acceso a los archivos del NAS o una tormenta solar lo ha dejado inutilizado. 
 
@@ -95,3 +102,9 @@ Ahora que ya tenemos nuestra base de datos extraída y renombrada, es hora de le
 Para ello, desplegamos un nuevo `docker-compose.yml` en Portainer, que contenga la información de este nuevo contenedor. [Tienes el ejemplo aquí](https://github.com/decisoft/tutoriales/blob/main/vaultwarden-backup/docker-compose-restaurar.yml). Básicamente, es igual que el anterior con db-backup, pero sin la información de este último. Por supuesto, tendremos que mapear la ruta donde esté la carpeta en la que hemos restaurado la base de datos, darle un nuevo nombre para el contenedor y ajustar los puertos para que no haya conflictos con el original.
 
 Una vez hecho, le damos a "Deploy the stack" o "Levantar stack" y ya estaría el contenedor funcionando. Si todo ha ido bien, accederemos a este nuevo Vaultwarden y nos logearemos en él como si fuese el original, mismo email y misma contraseña. 
+
+
+
+> Gracias por leer. Si tienes alguna duda, puedes abrir un issue en este repositorio o preguntarla en los grupos de Telegram de Synology NAS, NASeros, NASZeros o UnRAID y estaré encantado, al igual que el resto de la comunidad, en solventar tus dudas (primero asegúrate bien de haber leído y hecho todos los pasos, que nos conocemos 😄).
+>
+> Si me he equivocado en algo, o quieres añadir instrucciones específicas para Synology o UnRAID, por ejemplo, para seguir sus plantillas, siéntete libre de abrir un issue y de hacer una pull request para que se incorpore al repositorio. ¡Gracias!

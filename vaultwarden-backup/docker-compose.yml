@@ -8,7 +8,7 @@ services:
       - SIGNUPS_ALLOWED=false
       - INVITATIONS_ALLOWED=false
     volumes:
-      - /mnt/appdata/docker/vaultwarden:/data # El directorio donde se creara la base de datos
+      - /mnt/appdata/docker/vaultwarden:/data
     ports:
       - 88:80
       - 3012:3012
@@ -20,16 +20,16 @@ services:
     links:
      - vaultwarden
     volumes:
-      - /mnt/appdata/docker/vaultwarden:/backup # El directorio donde esta la base de datos, igual que en vaultwarden
+      - /mnt/appdata/docker/vaultwarden:/backup
       - /mnt/appdata/docker/vaultwarden/post-script.sh:/assets/custom-scripts/post-script.sh 
     environment:
-      - DB_TYPE=sqlite3 # tipo de db, lo usual es sqlite
-      - DB_HOST=/backup/db.sqlite3 # la ruta exacta de la base de datos, se deja tal cual
-      - DB_NAME=database # igual
-      - DB_USER=root # igual
-      - DB_DUMP_FREQ=1440 # la frecuencia en minutos con la que se hara la copia. 1440 es una vez al dia
-      - DB_DUMP_BEGIN=0000 # Aqui podemos señalar la hora a la que queramos que empiece a hacerse, formato hh:mm sin el :
-      - DB_CLEANUP_TIME=8640 # Cada cuantos dias queremos borrar 
+      - DB_TYPE=sqlite3
+      - DB_HOST=/backup/db.sqlite3
+      - DB_NAME=database
+      - DB_USER=root
+      - DB_DUMP_FREQ=1440
+      - DB_DUMP_BEGIN=0000
+      - DB_CLEANUP_TIME=8640
       - MD5=TRUE 
       - COMPRESSION=GZ
       - BACKUP_LOCATION=FILESYSTEM

@@ -111,6 +111,6 @@ Una vez hecho, le damos a "Deploy the stack" o "Levantar stack" y ya estaría el
 
 
 
-> Gracias por leer. Si tienes alguna duda, puedes abrir un issue en este repositorio o preguntarla en los grupos de Telegram de Synology NAS, NASeros, NASZeros o UnRAID ES y estaré encantado, al igual que el resto de la comunidad, en solventar tus dudas (primero asegúrate bien de haber leído y hecho todos los pasos, que nos conocemos 😄).
+> Gracias por leer. Si tienes alguna duda, puedes abrir un issue en este repositorio o preguntarla en los grupos de Telegram de Synology NAS, NASeros, NASZeros o UnRAID ES y estaré encantado, al igual que el resto de la comunidad, de solventar tus dudas (primero asegúrate bien de haber leído y hecho todos los pasos, que nos conocemos 😄).
 >
 > Si me he equivocado en algo, o quieres añadir instrucciones específicas para Synology o UnRAID, por ejemplo, para seguir sus plantillas, siéntete libre de abrir un issue y de hacer una pull request para que se incorpore al repositorio. ¡Gracias!

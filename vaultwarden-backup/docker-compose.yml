@@ -28,10 +28,9 @@ services:
       - DB_NAME=database # igual
       - DB_USER=root # igual
       - DB_DUMP_FREQ=1440 # la frecuencia en minutos con la que se hara la copia. 1440 es una vez al dia
-#      - DB_DUMP_BEGIN=0000 # Aqui podemos señalar la hora a la que queramos que empiece a hacerse, formato hh:mm sin el :
+      - DB_DUMP_BEGIN=0000 # Aqui podemos señalar la hora a la que queramos que empiece a hacerse, formato hh:mm sin el :
       - DB_CLEANUP_TIME=8640 # Cada cuantos dias queremos borrar 
       - MD5=TRUE 
       - COMPRESSION=GZ
-      - SPLIT_DB=FALSE
       - BACKUP_LOCATION=FILESYSTEM
     restart: always

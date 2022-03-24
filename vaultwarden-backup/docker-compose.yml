@@ -33,4 +33,5 @@ services:
       - MD5=TRUE 
       - COMPRESSION=GZ
       - BACKUP_LOCATION=FILESYSTEM
+      - DB_PASS=palabra
     restart: always
